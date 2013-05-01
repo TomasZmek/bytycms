@@ -1,0 +1,81 @@
+{* This is the welcome page, you can delete it *}
+
+{block content}
+<!-- content -->
+    <section id="content">
+        <div class="bg-top">
+        	<div class="bg-top-2">
+                <div class="bg">
+                    <div class="bg-top-shadow">
+                        <div class="main">
+                        <div class="bg-bot">
+        	<div class="main">
+            	<div class="container_12">
+                	<div class="wrapper">
+                		{control widgetLeft}
+                        {block motto}
+                        {var x=2}
+                        <article class="grid_4">
+                        	<h3 class="prev-indent-bot">Naše Motto</h3>
+                            <div class="quote">
+                            	<p class="prev-indent-bot"></p>
+                               
+                            </div>
+                        </article>
+                        {/block motto}
+                        {block news}
+                        <article class="grid_4">
+                        	<h3 class="prev-indent-bot">Co je nového</h3>
+                        	{foreach $news as $new}
+                            <time class="tdate-1" datetime="{$new->date|date:'j.n.Y'}"><a class="link" href="#">{$new->date|date:'j.n.Y'}- {$new->title}</a></time>
+                            <p class="prev-indent-bot">{$new->body}</p>
+                            {/foreach}
+                       </article>
+                       {/block news}
+                    </div>
+                </div>
+            </div>
+                            <div class="gallery p3">
+                            	<div class="wrapper indent-bot">
+                            	
+                                    <div id="gallery" class="content">
+                                       <div class="wrapper">
+                                           <div class="slideshow-container">
+                                                <div id="slideshow" class="slideshow"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="thumbs" class="navigation">
+                                        <ul class="thumbs noscript">
+                                            <li>
+                                                <a class="thumb" href="images/gallery-img1.jpg" title=""> <img src="images/thumb-1.jpg" alt="" /><span></span> </a>
+                                            </li> 
+                                            <li>
+                                                <a class="thumb" href="images/gallery-img2.jpg" title=""> <img src="images/thumb-2.jpg" alt="" /> <span></span></a>
+                                            </li> 
+                                            <li>
+                                                <a class="thumb" href="images/gallery-img3.jpg" title=""> <img src="images/thumb-3.jpg" alt="" /> <span></span></a>
+                                            </li> 
+                                            <li>
+                                                <a class="thumb" href="images/gallery-img4.jpg" title=""> <img src="images/thumb-4.jpg" alt="" /> <span></span></a>
+                                            </li> 
+                                            <li>
+                                                <a class="thumb" href="images/gallery-img5.jpg" title=""> <img src="images/thumb-5.jpg" alt="" /> <span></span></a>
+                                            </li> 
+                                            <li>
+                                                <a class="thumb" href="images/gallery-img6.jpg" title=""> <img src="images/thumb-6.jpg" alt="" /> <span></span></a>
+                                            </li>           
+                                        </ul>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>	
+        </div>
+        
+        </div>
+    </section>
+    {/block content}
