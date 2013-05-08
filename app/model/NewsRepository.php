@@ -11,6 +11,9 @@ class NewsRepository
 	public function getAllNews() {
 		return $this->database->table('news')->order('date DESC');
 	}
+	public function getNews(){
+		return $this->database->table('news')->order('date DESC')->limit(2);
+	}
 	public function newNews($title, $body) {
 		$data = array(
 			'title' => $title,

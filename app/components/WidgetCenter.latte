@@ -1,0 +1,10 @@
+{block motto}
+<article class="grid_4">
+{foreach $pages as $page}
+<h3 class="prev-indent-bot">{$page->title}</h3>
+<div class="quote">
+<p class="prev-indent-bot">{$page->body}</p>
+</div>
+{/foreach}
+</article>
+{/block motto}

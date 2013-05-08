@@ -16,10 +16,16 @@ class HomepagePresenter extends BasePresenter
 	public function renderDefault()
 	{
 		$this->template->news = $this->newsRepository->getAllNews();
-		//$this->template->pages = $this->pagesRepository->getPagesLeft();
+		
 	}
 	public function createComponentWidgetLeft()
 	{
 		return new Byty\WidgetLeft($this->pagesRepository->getPagesLeft());
 	}
+	
+	public function createComponentWidgetCenter()
+	{
+		return new Byty\WidgetCenter($this->pagesRepository->getPagesCenter());
+	}
+	
 }
