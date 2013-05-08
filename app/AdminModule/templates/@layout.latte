@@ -1,4 +1,3 @@
-{if $user->isLoggedIn()}
 <!DOCTYPE html>
 <html lang="cs">
 <head>
@@ -56,6 +55,8 @@
 </head>
 
 <body>
+
+				
 		<!-- topbar starts -->
 	<div class="navbar">
 		<div class="navbar-inner">
@@ -66,13 +67,9 @@
 					<span class="icon-bar"></span>
 				</a>
 				<a class="brand" href="{$basePath}/admin"> <img alt="Charisma Logo" src="{$basePath}/img/logo20.png" /> <span>Admin</span></a>
-				
+				{if $user->isLoggedIn()}
 				<!-- user dropdown starts -->
 				<div class="btn-group pull-right" >
-					<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-						<i class="icon-user"></i><span class="hidden-phone"> admin</span>
-						<span class="caret"></span>
-					</a>
 					<ul class="dropdown-menu">
 						<li><a href="#">Profile</a></li>
 						<li class="divider"></li>
@@ -114,12 +111,13 @@
 						<li><a href="tour.html"><i class="icon-globe"></i><span class="hidden-tablet"> Tour</span></a></li>
 						<li><a class="ajax-link" href="icon.html"><i class="icon-star"></i><span class="hidden-tablet"> Icons</span></a></li>
 						<li><a href="error.html"><i class="icon-ban-circle"></i><span class="hidden-tablet"> Error Page</span></a></li>
-						<li><a href="login.html"><i class="icon-lock"></i><span class="hidden-tablet"> Login Page</span></a></li>
+						<li><a n:href="logout!"><i class="icon-lock"></i><span class="hidden-tablet">Odhlásit</span></a></li>
 					</ul>
 					<label id="for-is-ajax" class="hidden-tablet" for="is-ajax"><input id="is-ajax" type="checkbox"> Ajax on menu</label>
 				</div><!--/.well -->
 			</div><!--/span-->
 			<!-- left menu ends -->
+			
 			
 			<noscript>
 				<div class="alert alert-block span10">
@@ -154,7 +152,9 @@
 				<a href="#" class="btn btn-primary">Save changes</a>
 			</div>
 		</div>
-
+			{else}
+			{control loginForm}
+			{/if}
 		<footer>
 			<p class="pull-left">&copy; <a href="http://usman.it" target="_blank">Muhammad Usman</a> 2012</p>
 			<p class="pull-right">Powered by: <a href="http://usman.it/free-responsive-admin-template">Charisma</a></p>
@@ -239,6 +239,3 @@
 		
 </body>
 </html>
-{else}
-    <p>You are not logged in.</p>
-{/if}

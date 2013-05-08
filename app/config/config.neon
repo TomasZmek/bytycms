@@ -25,27 +25,21 @@ common:
 
 
 	services:
-		authenticator: Authenticator
+		
+		authenticator: BytyProj\Security\Authenticator
 		authorizator:
-		class:	Nette\Security\Permission
-		setup:
-			-	addRole('guest')
-			-	addRole('admin')
-			-	addResource('Admin:Default')
-			-	allow('admin')
+			class:	Nette\Security\Permission
+			setup:
+				-	addRole('guest')
+				-	addRole('admin')
+				-	addResource('Admin:Default')
+				-	allow('admin')
+				
 		routerFactory: RouterFactory
 		router: @routerFactory::createRouter
 		newsRepository:	Byty\NewsRepository
 		pagesRepository:	Byty\PagesRepository
 		userRepository:	Byty\UserRepository
-		
-		database:
-			class:	Nette\Database\Connection
-			arguments:	[
-					'%database.driver%:host=%database.host%;dbname=%database.dbname%',
-					%database.user%,
-					%database.password%
-					]
 		
 
 
